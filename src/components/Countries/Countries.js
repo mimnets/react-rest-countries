@@ -1,7 +1,15 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Countries = (props) => {
-    const {name, capital, region, timezones} = props.country;
+    const {name, region, alpha3Code} = props.country;
+
+    const history = useHistory() 
+    const handleCountyName = (countryName) => {
+        const url = `/country/${countryName}`;
+        history.push(url);
+    }
+
     const countryStyle = {
         border: '1px solid gray',
         margin: '20px',
@@ -11,9 +19,8 @@ const Countries = (props) => {
     return (
         <div style={countryStyle}>
             <h2>Country Name : {name}</h2>
-            <p>Capital City : {capital}</p>
             <p>Region : {region}</p>
-            <p>TimeZone : {timezones}</p>
+            <button onClick={ () => handleCountyName(alpha3Code)}>Country Details </button>
         </div>
     );
 };

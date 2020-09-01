@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const CountryInfo = () => {
+    const {countryName} = useParams()
     const [country, setCountry] = useState({})
-    let name = country;
-    const url = `https://restcountries.eu/rest/v2/name/${country}`
+
+    const url = `https://restcountries.eu/rest/v2/name/${countryName}`
     useEffect(() => {
         fetch(url)
         .then(res => res.json())
@@ -11,7 +13,7 @@ const CountryInfo = () => {
     },[])
     return (
         <div>
-            
+            <p>{country.name}</p>
         </div>
     );
 };
