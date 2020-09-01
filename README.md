@@ -1,3 +1,14 @@
+React Router REST Countries
+
+echo "# react-rest-countries" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/mimnets/react-rest-countries.git
+git push -u origin master
+                
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
